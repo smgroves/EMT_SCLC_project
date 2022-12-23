@@ -87,11 +87,11 @@ pj.scatter_dist(df=dfrpm, vx = "E score (nnPC 1)",
 
 ################## Bulk RNA-seq, Human Cell Lines #########
 ################## Figure 1B ##############################
-data = pd.read_csv('Groves-CellSys2021/data/bulk-rna-seq/SCLC_combined_Minna_CCLE_batch_corrected_wo_lowgenes.csv', header = 0, index_col=0).T
+data = pd.read_csv('./SCLC_combined_Minna_CCLE_batch_corrected_wo_lowgenes.csv', header = 0, index_col=0).T
 gene_names = data.columns
 resE = pj.ssgsea(data, gene_names, egenes)
 resM = pj.ssgsea(data, gene_names, mgenes)
-clines = pd.read_csv("Groves-CellSys2021/data/bulk-rna-seq/combined_clusters_2020-05-27-MC copy.csv", index_col = 0)
+clines = pd.read_csv("./combined_clusters_2020-05-27-MC copy.csv", index_col = 0)
 clus = clines.reindex(data.index).NEW_10_2020
 dfbk = pj.make_emt_sclc_df(None, data, gene_names,
         emt_set|sclc_set, meta_data={'Subtype': clus},
