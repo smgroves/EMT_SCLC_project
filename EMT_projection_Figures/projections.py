@@ -84,7 +84,7 @@ def ssgsea(data, gene_names_all, gene_names_in_set, name='GeneSet'):
         sample_norm_method='rank', # choose 'custom' for your own rank list
         no_plot=True,
         threads=8)
-    return ssgs.res2d.NES
+    return ssgs.res2d.set_index('Name').NES
 
 def geti(gene_names_all, gene):
     '''
